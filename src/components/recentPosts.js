@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+import Post from './post';
+
 class RecentPosts extends Component {
     componentDidMount() {
         this.props.fetchRecentPosts();
     }
 
     renderPosts = () => {
+        // Tomamos solo los 3 primeros posts y renderizamos el componente Post
         return this.props.recentPosts.slice(0, 3).map((post, index) => (
-            <li key={index}>{post.title}</li>
+            <Post {...post} key={index} />
         ));
     }
 
