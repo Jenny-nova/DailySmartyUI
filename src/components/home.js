@@ -1,16 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Logo from './logo';
 import SearchBar from './searchBar';
 import RecentPosts from './recentPosts';
+import Results from './results'; // importa Results correctamente
 
-export default class Home extends Component {
-  render() {
-    return (
-      <div>
-        <Logo />
-        <SearchBar />
-        <RecentPosts />
-      </div>
-    );
-  }
+function Home() {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <div>
+            <Logo />
+            <SearchBar />
+            <RecentPosts />
+          </div>
+        </Route>
+        <Route path="/results">
+          <Results />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
+
+export default Home;

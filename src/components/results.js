@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import Logo from './logo';
+import SearchBar from './searchBar';
 
 class Results extends Component {
     render() {
@@ -7,8 +9,11 @@ class Results extends Component {
             <div>
                 <h1>Results</h1>
                 <Logo/>
+                <Logo size={55}/>
+                <SearchBar/>
             </div>
         )
     }
 }
+
 export default Results;
